@@ -1,4 +1,19 @@
 # MPS_Intenship_EeshaS
 MPS
+------------------------------------------------------------------------------------
+Task 1: 
+"I have simple task . Wanted to start with measuring the performance of C++ STL libraries.
+and Complex task is build a tracing tool.  Lets Start with simple task.
+
+http://www.cplusplus.com/reference/vector/vector/
+
+Each method I wanted to run in iteration and measure time in seconds. 
+- pseudocode
+     - for count { { 1, 100,1000,10000,50K, 1Million}
+             - startime <- take the curren time
+             - run the given methon 
+             - endtime <- take the time 
+            -  nameof method, #numberoftimes called, timetakenInSecond"
+------------------------------------------------------------------------------------
 2018-07-02 by ES: my changes are in MPS_task_1.cpp.
 
