@@ -11,7 +11,7 @@
 #include <windows.h>
 using namespace std;
 
-
+//this is an example function
 void fun1(){
 	int val = 10000;
 	//Sleep(2);
@@ -19,7 +19,7 @@ void fun1(){
 		val += 100000;
 	}
 }
-
+//basic code for finding time
 double timefind(int NumOfIterations){
 	clock_t begin = clock();
 	for (int i = 0; i < NumOfIterations; i++){
@@ -32,10 +32,7 @@ double timefind(int NumOfIterations){
 
 int main()
 {
-	cout << "Hello World\n";
+	cout << timefind(10000) << " seconds" << endl;
 
-	cout << timefind(10000000) << " seconds" << endl;
-
-	// double result = timesRun(times, &fun1);
 	return 0;
 }
