@@ -20,17 +20,11 @@ void testPushBack(){
 	myVector.push_back(0);
 }
 void testPopBack(){
-	vector<int> myvector;
-	myvector.pop_back();
+	myVector.pop_back();
 }
-///ignore
-void insertTest(vector<int> &myvector){
-	vector<int>::iterator it = myvector.begin();
-	myvector.insert(it, 1);
-}
-////
 
-void insertTest(){
+
+void testInsert(){
 	vector<int>::iterator it = myVector.begin();
 	myVector.insert(it, 1);
 }
@@ -44,14 +38,14 @@ void printVector(){
 }
 
 void testAssign(){
-	myVector.assign(1, 1);
+	myVector.assign(0, 1);
 }
 
 void testCreateVector(){
 	vector<int> vec{ 1 };
 }
 
-void testEraseandInsert(){ 
+void testInsertErase(){ 
 	vector<int>::iterator it = myVector.begin();
 	myVector.insert(it, 1);
 	myVector.erase(myVector.begin());
@@ -75,11 +69,11 @@ void populateVector(int num){
 
 }
 //basic code for finding time
-double timefind(int numOfIterations, void fun()){
-	if (fun == testErase){
+double testRun(int numOfIterations, void fun()){
+	if (fun == testErase || fun == testPopBack){
 		populateVector(numOfIterations);
 	}
-	printVector();
+	//printVector();
 	clock_t begin = clock();
 	for (int i = 0; i < numOfIterations; i++){
 		if (fun == testClear){
@@ -90,7 +84,7 @@ double timefind(int numOfIterations, void fun()){
 	clock_t end = clock();
 	double timeElapsed = double(end - begin) / CLOCKS_PER_SEC;
 
-	printVector();
+	//printVector();
 	
 	myVector.clear();
 	return timeElapsed;
@@ -98,7 +92,20 @@ double timefind(int numOfIterations, void fun()){
 
 int main()
 {
-	cout << timefind(5, testErase) << " seconds" << endl;
+	int times = 100000;
+	cout << " times = " << times << endl;
 
+	cout << "testErase time " << testRun(times, testErase) << " seconds" << endl;
+	cout << "testPopBack time " << testRun(5, testPopBack) << " seconds" << endl;
+	cout << "testPushBack time " << testRun(5, testPushBack) << " seconds" << endl;
+	cout << "testCreateVector time " << testRun(5, testCreateVector) << " seconds" << endl;
+	cout << "testClear time " << testRun(5, testClear) << " seconds" << endl;
+	cout << "testInsertErase time " << testRun(5, testInsertErase) << " seconds" << endl;
+	cout << "testSwap time " << testRun(5, testSwap) << " seconds" << endl;
+	cout << "testAssign time " << testRun(5, testAssign) << " seconds" << endl;
+
+	times = 10000;
+	cout << " times = " << times << endl;
+	cout << "testInsert time " << testRun(times, testInsert) << " seconds" << endl;
 	return 0;
 }
