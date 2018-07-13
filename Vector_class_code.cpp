@@ -16,9 +16,9 @@ vector<int> myVector;
 vector<int> myVector2;
 //these are the modifiers
 void testPushBack(){
-	//vector<int> myvector;
 	myVector.push_back(0);
 }
+
 void testPopBack(){
 	myVector.pop_back();
 }
@@ -96,13 +96,13 @@ int main()
 	cout << " times = " << times << endl;
 
 	cout << "testErase time " << testRun(times, testErase) << " seconds" << endl;
-	cout << "testPopBack time " << testRun(5, testPopBack) << " seconds" << endl;
-	cout << "testPushBack time " << testRun(5, testPushBack) << " seconds" << endl;
-	cout << "testCreateVector time " << testRun(5, testCreateVector) << " seconds" << endl;
-	cout << "testClear time " << testRun(5, testClear) << " seconds" << endl;
-	cout << "testInsertErase time " << testRun(5, testInsertErase) << " seconds" << endl;
-	cout << "testSwap time " << testRun(5, testSwap) << " seconds" << endl;
-	cout << "testAssign time " << testRun(5, testAssign) << " seconds" << endl;
+	cout << "testPopBack time " << testRun(times, testPopBack) << " seconds" << endl;
+	cout << "testPushBack time " << testRun(times, testPushBack) << " seconds" << endl;
+	cout << "testCreateVector time " << testRun(times, testCreateVector) << " seconds" << endl;
+	cout << "testClear time " << testRun(times, testClear) << " seconds" << endl;
+	cout << "testInsertErase time " << testRun(times, testInsertErase) << " seconds" << endl;
+	cout << "testSwap time " << testRun(times, testSwap) << " seconds" << endl;
+	cout << "testAssign time " << testRun(times, testAssign) << " seconds" << endl;
 
 	times = 10000;
 	cout << " times = " << times << endl;
